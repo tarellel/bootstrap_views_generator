@@ -1,0 +1,17 @@
+= form_for @<%= singular_table_name %>, local: true do |f|
+  - if @<%= singular_table_name %>.errors.any?
+    = errors_for(@<%= singular_table_name %>)
+
+<% attributes.each do |attribute| -%>
+<%- if attribute.field_type == :check_box %>
+  .form-group.form-check
+    = f.<%= attribute.field_type %> :<%= attribute.name %>, class: 'form-check-input'
+    = f.label :<%= attribute.name %>, class: 'form-check-label'
+<%- else -%>
+  .form-group
+    = f.label :<%= attribute.name %>
+    = f.<%= attribute.field_type %> :<%= attribute.name %>, class: 'form-control'
+<% end -%>
+<% end -%>
+  .form-group
+    = f.submit class: 'btn btn-primary btn-sm'

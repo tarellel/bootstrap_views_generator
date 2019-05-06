@@ -1,0 +1,4 @@
+%h1= title('New <%%= singular_table_name.titleize %>')
+
+= render 'form', <%%= singular_table_name %>: @<%%= singular_table_name %>
+= link_to 'Back', <%%= index_helper %>_path

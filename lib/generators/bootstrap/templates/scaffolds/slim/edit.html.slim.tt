@@ -1,0 +1,11 @@
+<%- if options[:metatags] %>
+h1 = title('Editing <%%= singular_table_name.titleize %>')
+<%- else -%>
+h1 Editing <%%= plural_table_name.titleize %>
+<%- end -%>
+
+= render 'form', <%%= singular_table_name %>: @<%%= singular_table_name %>
+
+= link_to 'Show', @<%%= singular_table_name %>
+'|
+= link_to 'Back', <%%= index_helper %>_path

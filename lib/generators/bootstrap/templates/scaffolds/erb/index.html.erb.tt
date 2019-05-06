@@ -1,0 +1,35 @@
+<%- if options[:pagination] -%>
+<h1><%%%= title('<%%= plural_table_name.titleize %>') %></h1>
+<%- else -%>
+<h1><%%= plural_table_name.titleize %></h1>
+<%- end -%>
+
+<table class="table table-striped table-hover table-sm">
+  <thead>
+    <tr>
+<%% attributes.reject(&:password_digest?).each do |attribute| -%>
+      <th scope="col"><%%= attribute.human_name %></th>
+<%% end -%>
+      <th colspan="3" scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%%% @<%%= plural_table_name %>.each do |<%%= singular_table_name %>| %>
+      <tr>
+<%% attributes.reject(&:password_digest?).each do |attribute| -%>
+        <td><%%%= <%%= singular_table_name %>.<%%= attribute.column_name %> %></td>
+<%% end -%>
+        <td><%%%= link_to 'Show', <%%= model_resource_name %> %></td>
+        <td><%%%= link_to 'Edit', edit_<%%= singular_route_name %>_path(<%%= singular_table_name %>) %></td>
+        <td><%%%= link_to 'Destroy', <%%= model_resource_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%%% end %>
+  </tbody>
+</table>
+
+<%- if options[:pagination] -%>
+<%%%= render 'shared/pagination' %>
+<% end -%>
+<br>
+<%%%= link_to 'New <%%= singular_table_name.titleize %>', new_<%%= singular_route_name %>_path %>
