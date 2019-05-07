@@ -7,4 +7,4 @@ gemspec
 
 
 gem 'bootstrap', '~> 4.0'
-gem 'railties', '>= 5.2'
+gem 'railties', '>= 5.0'
