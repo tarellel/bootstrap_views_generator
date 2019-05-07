@@ -28,9 +28,9 @@ Usage:
 
 Options:
 Options:
--t, [--template-engine=TEMPLATE_ENGINE]     # Indicates when to generate template engine
+-t, [--template-engine=TEMPLATE_ENGINE]     # Indicates when to generate using a designated template engine (erb, slim, haml)
                                             # Default: erb
---simpleform                                # Indicates if simpleform will be used
+--simpleform                                # Indicates if simple_form is to be used to generate the forms
                                             # Default: false
 --pagination                                # Specify if you want to add pagination to the index pages
                                             # Defaults: false (requires Pagy to use pagination)
