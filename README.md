@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'bootstrap_views_generator'
+gem 'bootstrap_views_generator', group: :development
 ```
 
 And then execute:
@@ -28,14 +28,14 @@ Usage:
 
 Options:
 Options:
--t, [--template-engine=TEMPLATE_ENGINE]          # Indicates when to generate template engine
-                                                 # Default: erb
--sf [--simpleform]                         # Indicates if simpleform will be used
-                                                 # Default: false
+-t, [--template-engine=TEMPLATE_ENGINE]     # Indicates when to generate template engine
+                                            # Default: erb
+-sf [--simpleform]                          # Indicates if simpleform will be used
+                                            # Default: false
 -p [--pagination]                           # Specify if you want to add pagination to the index pages
-                                                 # Defaults: false (requires Pagy to use pagination)
--m [--metatags]                            # If you want the pages titles to use the metatags gem function for the page title
-                                                 # Default: false
+                                            # Defaults: false (requires Pagy to use pagination)
+-m [--metatags]                             # If you want the pages titles to use the metatags gem function for the page title
+                                            # Default: false
 ```
 
 ## Options
@@ -92,7 +92,6 @@ Generate bootstrap views with slim and using simple_form
 ```shell
 rails g bootstrap:install --template_engine=slim --simpleform
 ```
-
 
 ### Extras
 

@@ -66,3 +66,4 @@ yarn-error.log
 # Ignore application based files
 .idea
 .vagrant
+*.gem
