@@ -1,24 +1,24 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "bootstrap_views_generator/version"
+require 'bootstrap_views_generator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "bootstrap_views_generator"
+  spec.name          = 'bootstrap_views_generator'
   spec.version       = BootstrapViewsGenerator::VERSION
-  spec.authors       = ["Brandon Hicks"]
-  spec.email         = ["tarellel@gmail.com"]
+  spec.authors       = ['Brandon Hicks']
+  spec.email         = ['tarellel@gmail.com']
 
   spec.summary       = %q{Bootstrap generators for overwriting the default Rails view generators}
   spec.description   = %q{A Rails based generator for creating Bootstrap Views/layouts for for your application}
-  spec.homepage      = "https://github.com/tarellel/bootstrap_views_generator"
-  spec.license       = "MIT"
+  spec.homepage      = 'https://github.com/tarellel/bootstrap_views_generator'
+  spec.license       = 'MIT'
 
   # Going off of minimum version required for Rails_v5.2.3
   spec.required_ruby_version     = '>= 2.2.2'
   if spec.respond_to?(:metadata)
-    spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = spec.homepage
+    spec.metadata['homepage_uri'] = spec.homepage
+    spec.metadata['source_code_uri'] = spec.homepage
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -29,9 +29,9 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'bootstrap', '>= 4.0'
   spec.add_runtime_dependency 'railties', '>= 5.0'
