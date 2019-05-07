@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["tarellel@gmail.com"]
 
   spec.summary       = %q{Bootstrap generators for overwriting the default Rails view generators}
-  spec.description   = %q{Generate Bootstrap Views/layouts and fors for your application}
+  spec.description   = %q{A Rails based generator for creating Bootstrap Views/layouts for for your application}
   spec.homepage      = "https://github.com/tarellel/bootstrap_views_generator"
   spec.license       = "MIT"
 
