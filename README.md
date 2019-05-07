@@ -1,8 +1,6 @@
 # BootstrapViewsGenerator
 
-![](https://ruby-gem-downloads-badge.herokuapp.com/bootstrap_views_generator?type=total)  [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
-
-
+![](https://ruby-gem-downloads-badge.herokuapp.com/bootstrap_views_generator?type=total)  [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT) [![Gem](https://img.shields.io/gem/v/bootstrap_views_generator.svg?style=flat)](http://rubygems.org/gems/bootstrap_views_generator "View this project in Rubygems")
 This gem is used for generating Bootstrap based scaffold views for your Rails application. They can be Erb, Slim, or HAML. You can include pagination (using Pagy), simple_form (for the form components), and if you'd like you can utilize the meta-tags gems to all dynamic page titles when switching between your view components.
 
 ## Installation
