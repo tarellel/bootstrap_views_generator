@@ -14,14 +14,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/tarellel/bootstrap_views_generator"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  # Going off of minimum version required for Rails_v5.2.3
+  spec.required_ruby_version     = '>= 2.2.2'
   if spec.respond_to?(:metadata)
-    # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = spec.homepage
-    # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
