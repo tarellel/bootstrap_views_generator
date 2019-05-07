@@ -6,5 +6,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 
-gem 'bootstrap', '~> 4.3'
+gem 'bootstrap', '~> 4.0'
 gem 'railties', '>= 5.2'
