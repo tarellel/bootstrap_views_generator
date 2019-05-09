@@ -11,10 +11,10 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'bootstrap_views_generator', group: :development
 
-# Now make sure you have the bootstrap gem installed and included in your application.scss file
+# Now make sure you have the bootstrap gem installed in your Gemfile
 gem 'bootstrap', '~> 4.3'
 
-# application.scss
+# And ensure you have bootstrap included in your application.scss
 @import 'bootstrap';
 ```
 
@@ -41,6 +41,8 @@ Options:
 --pagination                                # Specify if you want to add pagination to the index pages
                                             # Defaults: false (requires Pagy to use pagination)
 --metatags                                  # If you want the pages titles to use the metatags gem function for the page title
+                                            # Default: false
+--layout                                    # Over-write your application layout file with a bootstrap based layout
                                             # Default: false
 ```
 
