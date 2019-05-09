@@ -11,8 +11,11 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'bootstrap_views_generator', group: :development
 
-# also make sure you have the bootstrap gem installed and included in your application.scss file
+# Now make sure you have the bootstrap gem installed and included in your application.scss file
 gem 'bootstrap', '~> 4.3'
+
+# application.scss
+@import 'bootstrap';
 ```
 
 And then execute:
