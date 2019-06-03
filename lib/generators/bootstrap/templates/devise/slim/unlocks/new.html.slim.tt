@@ -1,0 +1,14 @@
+<%- if options[:metatags] %>
+h2.text-center = title('Resend unlock instructions')
+<% else -%>
+h2.text-center Resend unlock instructions
+<%- end %>
+= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .actions
+    = f.submit "Resend unlock instructions"
+= render "devise/shared/links"

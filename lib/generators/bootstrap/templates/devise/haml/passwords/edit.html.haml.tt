@@ -1,0 +1,23 @@
+<%- if options[:metatags] %>
+%h2.text-center= title('Change your password')
+<% else -%>
+%h2.text-center Change your password
+<%- end %>
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+  = render 'devise/shared/error_messages', resource: resource
+  = f.hidden_field :reset_password_token
+  .field
+    = f.label :password, 'New password'
+    %br
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+      %br
+    = f.password_field :password, autofocus: true, autocomplete: 'new-password'
+  .field
+    = f.label :password_confirmation, 'Confirm new password'
+    %br
+    = f.password_field :password_confirmation, autocomplete: 'off'
+  .form-group
+    = f.submit 'Change my password'
+= render 'devise/shared/links'

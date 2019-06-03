@@ -44,6 +44,8 @@ Options:
                                             # Default: false
 --layout                                    # Over-write your application layout file with a bootstrap based layout
                                             # Default: false
+--devise                                    # If you want to generate bootstrap based devise views
+                                            # Default: false
 ```
 
 ## Options

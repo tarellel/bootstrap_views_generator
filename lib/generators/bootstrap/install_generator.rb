@@ -1,4 +1,5 @@
 require 'rails/generators'
+require_relative 'devise_generator'
 
 module Bootstrap
   module Generators
@@ -8,6 +9,7 @@ module Bootstrap
 
       class_option :template_engine, type: :string, default: 'erb', aliases: '-t', desc: 'Set template engine to generate the views with'
       # Boolean flags that can be flagged by adding to the generator call ie: --pagination or --metag_tags
+      class_option :devise, type: :boolean, default: false, desc: 'If views for devise will be required by the generator'
       class_option :layout, type: :boolean, default: false, aliases: "-l", desc: 'Over-write your application layout file with a bootstrap based layout'
       class_option :metatags, type: :boolean, default: false, aliases: "-m", desc: 'If views will assign pages title using metatags gem'
       class_option :pagination, type: :boolean, default: false, aliases: '-p', desc: 'Toggle if pagination will be used with the index view/controller (based off of Pagy)'
@@ -76,6 +78,10 @@ module Bootstrap
       HELPER
 
         inject_into_file 'app/helpers/application_helper.rb', helper_str, after: "module ApplicationHelper\n"
+      end
+
+      def invoke_devise_generator
+        invoke('bootstrap:devise') if options[:devise]
       end
     end
   end
