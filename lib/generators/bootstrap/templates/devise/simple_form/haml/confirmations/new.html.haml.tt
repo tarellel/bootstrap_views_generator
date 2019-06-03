@@ -1,0 +1,16 @@
+.row
+  .col-lg-4.col-md-6.ml-auto.mr-auto
+    <%- if options[:metatags] %>
+    %h2.text-center= title('Resend confirmation instructions')
+    <% else -%>
+    %h2.text-center Resend confirmation instructions
+    <%- end %>
+    = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      = f.error_notification
+      = f.full_error :confirmation_token
+      .form-group
+        = f.input :email, required: true, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), input_html: { autocomplete: "email" }
+      .form-group
+        = f.button :submit, 'Resend confirmation instructions', class: 'btn btn-primary btn-block btn-lg'
+    .text-center
+      = render "devise/shared/links"

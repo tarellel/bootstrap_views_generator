@@ -1,5 +1,5 @@
 <%- if options[:metatags] %>
-<h2 class="text-center"><%%= title("Change your password") %></h2>
+<h2 class="text-center"><%%= title('Change your password') %></h2>
 <% else -%>
 <h2 class="text-center">Change your password</h2>
 <%- end %>

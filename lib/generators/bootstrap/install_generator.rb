@@ -76,11 +76,11 @@ module Bootstrap
           end
         end
       HELPER
-
         inject_into_file 'app/helpers/application_helper.rb', helper_str, after: "module ApplicationHelper\n"
       end
 
       def invoke_devise_generator
+        # Generate bootstrap based devise views if devise is being used
         invoke('bootstrap:devise') if options[:devise]
       end
     end

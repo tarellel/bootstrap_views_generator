@@ -17,7 +17,7 @@
           Currently waiting confirmation for: #{resource.unconfirmed_email}
       .form-group
         = f.label :password
-        %i (leave blank if you don't want to change it)
+        %i (Leave blank if you don't want to change it)
         %br
         = f.password_field :password, autocomplete: "off", class: 'form-control'
       .form-group
@@ -26,7 +26,7 @@
         = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
       .form-group
         = f.label :current_password
-        %i (we need your current password to confirm your changes)
+        %i (We need your current password to confirm your changes)
         %br
         = f.password_field :current_password, autocomplete: "off", class: 'form-control'
       .form-group

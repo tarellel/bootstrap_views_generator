@@ -15,5 +15,5 @@
         = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Confirm Password'
       .form-group
         = f.submit "Sign up", class: "btn btn-primary btn-block btn-lg"
-      .text-center
-        = render "devise/shared/links"
+    .text-center
+      = render "devise/shared/links"

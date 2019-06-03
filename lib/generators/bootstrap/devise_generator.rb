@@ -12,7 +12,7 @@ module Bootstrap
       class_option :simpleform, type: :boolean, default: false, aliases: '-sf', desc: 'Enable SimpleForms for the form generating'
 
       def copy_confirmation
-        template "#{options[:template_engine]}/confirmations/new.html.#{options[:template_engine]}.tt", "app/views/devise/confirmations/#{options[:template_engine]}"
+        template "#{file_template_location('confirmations/new')}.tt", "app/views/devise/confirmations/new.html.#{options[:template_engine]}"
       end
 
       def copy_mailers
@@ -21,18 +21,18 @@ module Bootstrap
 
       def copy_passwords
         %i[edit new].map do |file|
-          template "#{options[:template_engine]}/passwords/#{file}.html.#{options[:template_engine]}.tt", "app/views/devise/passwords/#{file}.html.#{options[:template_engine]}"
+          template "#{file_template_location("passwords/#{file}")}.tt", "app/views/devise/passwords/#{file}.html.#{options[:template_engine]}"
         end
       end
 
       def copy_registrations
         %i[edit new].map do |file|
-          template "#{options[:template_engine]}/registrations/#{file}.html.#{options[:template_engine]}.tt", "app/views/devise/registrations/#{file}.html.#{options[:template_engine]}"
+          template "#{file_template_location("registrations/#{file}")}.tt", "app/views/devise/registrations/#{file}.html.#{options[:template_engine]}"
         end
       end
 
       def copy_sessions
-        template "#{options[:template_engine]}/sessions/new.html.#{options[:template_engine]}.tt", "app/views/devise/sessions/new.html.#{options[:template_engine]}"
+        template "#{file_template_location('sessions/new')}.tt", "app/views/devise/sessions/new.html.#{options[:template_engine]}"
       end
 
       def copy_unlock
@@ -45,10 +45,16 @@ module Bootstrap
       end
 
       private
-      def file_template_location(file_location)
-        # Will end up being something such as
-        # => slim/unlocks/new.html.slim
-        "#{options[:template_engine]}/#{file_location}.html.#{options[:template_engine]}"
+      def file_template_location(file_location = '')
+        return '' if file_location.blank?
+        # Dpending if simpleform is to be used, it will return a path similar to one of the following:
+        # => slim/unlocks/new.html.slim || simple_form/slim/unlocks/new.html.slim
+        "#{simple_path}#{options[:template_engine]}/#{file_location}.html.#{options[:template_engine]}"
+      end
+
+      # If simpleform is going ot be used with the forms return a simple_form path
+      def simple_path
+        options[:simpleform] ? 'simple_form/' : ''
       end
     end
   end

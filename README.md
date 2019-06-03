@@ -108,6 +108,10 @@ Generate bootstrap views with slim and using simple_form
 rails g bootstrap:install --template_engine=slim --simpleform
 ```
 
+Generate bootstrap scaffolds, devise views, while using simpleform, metatags, and slim template engine.
+```shell
+ rails g bootstrap:install --devise --simpleform --metatags --template_engine=slim
+```
 ### Extras
 
 * If you like to use the [meta-tags](https://github.com/kpumuk/meta-tags) gem to add page titles based on the views.
