@@ -76,7 +76,7 @@ module Bootstrap
           end
         end
       HELPER
-        inject_into_file 'app/helpers/application_helper.rb', helper_str, after: "module ApplicationHelper\n"
+        inject_into_file 'app/helpers/application_helper.rb', optimize_indentation(helper_str,2), after: "module ApplicationHelper\n"
       end
 
       def invoke_devise_generator
