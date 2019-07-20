@@ -9,6 +9,7 @@
       = render "devise/shared/error_messages", resource: resource
       .form-group
         = f.email_field :email, autofocus: true, placeholder: 'Email Address', autocomplete: "email", class: 'form-control'
-      .actions
+      .form-group
         = f.submit "Resend unlock instructions", class: 'btn btn-primary btn-block btn-lg'
-    = render "devise/shared/links"
+    .text-center
+      = render "devise/shared/links"

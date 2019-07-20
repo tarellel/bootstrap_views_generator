@@ -1,10 +1,10 @@
 .row
   .col-lg-4.col-md-6.ml-auto.mr-auto
-    <%- if options[:metatags] %>
+<%- if options[:metatags] %>
     %h2.text-center= title('Forgot your password?')
-    <% else -%>
+<% else -%>
     %h2.text-center Forgot your password?
-    <%- end %>
+<%- end %>
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       = render 'devise/shared/error_messages', resource: resource
       %br
