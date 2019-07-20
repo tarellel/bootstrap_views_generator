@@ -1,14 +1,14 @@
+.row
+  .col-lg-4.col-md-6.ml-auto.mr-auto
 <%- if options[:metatags] %>
-%h2.text-center= title("Resend unlock instructions")
+    %h2.text-center= title("Resend unlock instructions")
 <% else -%>
-%h2.text-center Resend unlock instructions
+    %h2.text-center Resend unlock instructions
 <%- end %>
-= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
-  = render 'devise/shared/error_messages', resource: resource
-  .field
-    = f.label :email
-    %br
-    = f.email_field :email, autofocus: true, autocomplete: 'email'
-  .form-group
-    = f.submit 'Resend unlock instructions', class: 'btn btn-primary btn-block btn-lg'
-= render 'devise/shared/links'
+    = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+          .form-group
+            = f.email_field :email, autofocus: true, placeholder: 'Email Address', autocomplete: "email", class: 'form-control'
+          .actions
+            = f.submit "Resend unlock instructions", class: 'btn btn-primary btn-block btn-lg'
+        = render "devise/shared/links"
