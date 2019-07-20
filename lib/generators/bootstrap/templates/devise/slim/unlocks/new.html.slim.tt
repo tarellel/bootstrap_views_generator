@@ -10,5 +10,5 @@ h2.text-center Resend unlock instructions
     br
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .actions
-    = f.submit "Resend unlock instructions"
+    = f.submit "Resend unlock instructions", class: 'btn btn-primary btn-block btn-lg'
 = render "devise/shared/links"
