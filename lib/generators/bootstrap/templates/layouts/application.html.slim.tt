@@ -28,6 +28,6 @@ html
       // https://github.com/WebReflection/ie8
       script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.8.0/ie8.js"
   body
-    .container-fluid.px-3.py-3
+    main.container-fluid.px-3.py-3 role="main"
       = flash_messages
       = yield
