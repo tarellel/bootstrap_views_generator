@@ -13,10 +13,18 @@
     <%%= csp_meta_tag %>
     <%- if options[:skip_turbolinks] -%>
     <%%= stylesheet_link_tag    'application', media: 'all' %>
+<%- if Gem::Version.new(Rails.version) < Gem::Version.new('6.0') %>
     <%%= javascript_include_tag 'application' %>
+<%- else %>
+    <%%= javascript_pack_tag 'application' %>
+<%- end %>
     <%- else -%>
     <%%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%- if Gem::Version.new(Rails.version) < Gem::Version.new('6.0') %>
+    <%%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+<%- else %>
+    <%%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<% end %>
     <%- end -%>
     <!--IE Polyfill for CSS Elements-->
     <!--HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
