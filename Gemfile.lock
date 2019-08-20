@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap_views_generator (0.1.10)
+    bootstrap_views_generator (0.1.11)
       railties (>= 4.0)
 
 GEM
