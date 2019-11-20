@@ -46,6 +46,10 @@ Options:
                                             # Default: false
 --devise                                    # If you want to generate bootstrap based devise views
                                             # Default: false
+--skip_javascript                           # If you want to skip adding javascript_include_tag || javascript_pack_tag to the layouts
+                                            # Default: false
+--skip_turbolinks                           # Do you want to skip associating turbolinks with the assets and views
+                                            # Default: false
 ```
 
 ## Options

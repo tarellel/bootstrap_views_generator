@@ -5,28 +5,21 @@
     %meta{charset: "utf-8"}/
     %meta{content: "IE=Edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-<%- if options[:metatags] %>
+<%- if options[:metatags] -%>
     = display_meta_tags site: '<%= Rails.application.class.parent.to_s.titleize %>'
-<% else %>
+<%- else -%>
     %title Bootstrap template
-<% end %>
+<%- end -%>
     = csrf_meta_tags
     = csp_meta_tag
-    <%- if options[:skip_turbolinks] -%>
-    = stylesheet_link_tag    'application', media: 'all'
-<%- if Gem::Version.new(Rails.version) < Gem::Version.new('6.0') %>
-    = javascript_include_tag 'application'
-<%- else %>
-    = javascript_pack_tag 'application'
+    = stylesheet_link_tag 'application', media: 'all'<%= options[:skip_turbolinks] ? '' : ", 'data-turbolinks-track': 'reload'" %>
+<%- unless options[:skip_javascript] -%>
+<%- if Gem::Version.new(Rails.version) < Gem::Version.new('6.0') -%>
+    = javascript_include_tag 'application'<%= options[:skip_turbolinks] ? '' : ", 'data-turbolinks-track': true" -%>
+<%- else -%>
+    = javascript_pack_tag 'application'<%= options[:skip_turbolinks] ? '' : ", 'data-turbolinks-track': 'reload'" -%>
+<%- end -%>
 <%- end %>
-    <%- else -%>
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-<%- if Gem::Version.new(Rails.version) < Gem::Version.new('6.0') %>
-    = javascript_include_tag 'application', 'data-turbolinks-track': true
-<%- else %>
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-<% end %>
-    <%- end -%>
     / IE Polyfill for CSS Elements
     / HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     /[if lt IE 9]
