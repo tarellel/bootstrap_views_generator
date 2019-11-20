@@ -6,7 +6,7 @@ module Bootstrap
     class InstallGenerator < ::Rails::Generators::Base
       desc 'Overwrite default view scaffolding'
       source_root ::File.expand_path('../templates', __FILE__)
-      class_option :template_engine,    type: :string, default: 'erb', enum: %w[erb slim haml],
+      class_option :template_engine,    type: :string, default: 'erb', aliases: '-t', enum: %w[erb slim haml],
                                         desc: 'The template_engine to use for generating the applications views (Erb, Slim, HAML)'
 
       # Boolean flags that can be flagged by adding to the generator call ie: --pagination or --metag_tags
