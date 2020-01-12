@@ -1,4 +1,6 @@
-require "bootstrap_views_generator/version"
+# frozen_string_literal: true
+
+require 'bootstrap_views_generator/version'
 require 'rails'
 
 module BootstrapViewsGenerator

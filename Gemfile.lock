@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap_views_generator (0.1.13)
+    bootstrap_views_generator (0.1.14)
       railties (>= 4.0, <= 7)
 
 GEM
@@ -93,7 +93,7 @@ DEPENDENCIES
   bootstrap_views_generator!
   bundler (>= 1.17, <= 3)
   railties (>= 5.0)
-  rake (>= 10.0)
+  rake (>= 7.0, <= 20.0)
 
 BUNDLED WITH
    1.17.3
