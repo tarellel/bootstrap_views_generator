@@ -52,8 +52,8 @@ module Bootstrap
         copy_file("simple_form/_form.html.#{options[:template_engine]}", "lib/templates/#{options[:template_engine]}/scaffold/_form.html.#{options[:template_engine]}", force: true) if options[:simpleform]
       end
 
-      # Inject Bootstrap helpers into teh application_helper file
-      def inject_helpers
+      # Inject Bootstrap helpers into the application_helper file
+      def inject_application_helpers
         pagy_helper = (options[:pagination] ? 'include Pagy::Frontend' : '')
         helper_str = <<~HELPER
         #{pagy_helper}
