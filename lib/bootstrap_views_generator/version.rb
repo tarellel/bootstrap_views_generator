@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 module BootstrapViewsGenerator
-  VERSION = '0.1.14'.freeze
+  MIN_RUBY_VERSION = '2.2.2'
+  VERSION = '0.1.14'
 end

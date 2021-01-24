@@ -49,7 +49,8 @@ module Bootstrap
       private
       def file_template_location(file_location = '')
         return '' if file_location.blank?
-        # Dpending if simpleform is to be used, it will return a path similar to one of the following:
+
+        # Depending if simpleform is to be used, it will return a path similar to one of the following:
         # => slim/unlocks/new.html.slim || simple_form/slim/unlocks/new.html.slim
         "#{simple_path}#{options[:template_engine]}/#{file_location}.html.#{options[:template_engine]}"
       end
