@@ -2,6 +2,7 @@
 
 require 'bootstrap_views_generator/version'
 require 'rails'
+require 'bootstrap_views_generator/helpers'
 
 module BootstrapViewsGenerator
   class Error < StandardError; end

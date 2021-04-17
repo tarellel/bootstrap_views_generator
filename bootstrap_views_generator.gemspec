@@ -15,14 +15,13 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/tarellel/bootstrap_views_generator'
   spec.license       = 'MIT'
 
-
   # Going off of minimum version required for Rails_v5.2.3
-  spec.required_ruby_version     = ">= #{BootstrapViewsGenerator::MIN_RUBY_VERSION}"
+  spec.required_ruby_version = ">= #{BootstrapViewsGenerator::MIN_RUBY_VERSION}"
   if spec.respond_to?(:metadata)
     spec.metadata['homepage_uri'] = spec.homepage
     spec.metadata['source_code_uri'] = spec.homepage
     spec.metadata['bug_tracker_uri'] = "#{spec.homepage}/issues",
-    spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/master/CHANGELOG.md"
+    spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/main/CHANGELOG.md"
   else
     raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end

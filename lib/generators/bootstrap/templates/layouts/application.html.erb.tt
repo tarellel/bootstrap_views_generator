@@ -5,10 +5,10 @@
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 <%- if options[:metatags] -%>
-    <%%= display_meta_tags site: '<%= Rails.application.class.parent.to_s.titleize %>' %>
+    <%%= display_meta_tags site: '<%= app_name %>' %>
 <%- else -%>
-    <title>Bootstrap template</title>
-<% end -%>
+    <title><%= app_name %></title>
+<%- end -%>
     <%%= csrf_meta_tags %>
     <%%= csp_meta_tag %>
     <%%= stylesheet_link_tag 'application', media: 'all'<%= (options[:skip_turbolinks] || options[:skip_javascript]) ? '' : ", 'data-turbolinks-track': 'reload'" %> %>

@@ -2,10 +2,12 @@
 
 require 'rails/generators'
 require_relative 'devise_generator'
+require_relative '../../bootstrap_views_generator/helpers'
 
 module Bootstrap
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
+      include BootstrapViewsGenerator::Helpers
       desc 'Overwrite default view scaffolding'
       source_root ::File.expand_path('../templates', __FILE__)
       class_option :template_engine,    type: :string, default: 'erb', aliases: '-t', enum: %w[erb slim haml],

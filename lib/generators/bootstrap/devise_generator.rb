@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 require 'rails/generators'
+require_relative '../../bootstrap_views_generator/helpers'
 
 module Bootstrap
   module Generators
     class DeviseGenerator < ::Rails::Generators::Base
+      include BootstrapViewsGenerator::Helpers
+
       hide!
       desc 'Overwrite default devise views'
       source_root ::File.expand_path('../templates/devise', __FILE__)
