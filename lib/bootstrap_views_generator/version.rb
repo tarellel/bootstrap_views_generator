@@ -2,5 +2,5 @@
 
 module BootstrapViewsGenerator
   MIN_RUBY_VERSION = '2.2.2'
-  VERSION = '0.1.15'
+  VERSION = '0.1.16'
 end
